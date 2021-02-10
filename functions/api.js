@@ -52,4 +52,8 @@ app.get('/movie/:id', handleInformation);
 app.get('/person/:id', handleInformation);
 app.get('/tv/:id', handleInformation);
 
+app.use((req, res, next) => {
+  res.status(404).send();
+});
+
 module.exports.handler = serverless(app);
